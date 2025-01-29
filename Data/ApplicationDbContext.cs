@@ -5,11 +5,17 @@ namespace ContactFormApp2.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        // Veritabanındaki tabloları burada tanımlayın
         public DbSet<ContactForm> ContactForms { get; set; }
 
-        public ApplicationDbContext() : base("DefaultConnection")
+        public ApplicationDbContext() : base("name=Contact")
         {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ContactForm>().ToTable("ContactForm", "dbo");
         }
     }
 }

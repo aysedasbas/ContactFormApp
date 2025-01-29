@@ -1,4 +1,4 @@
-﻿using ContactFormApp2.Data;  // ApplicationDbContext sınıfını içeren namespace
+﻿using ContactFormApp2.Data; 
 using ContactFormApp2.Models;
 using System.Web.Mvc;
 
@@ -8,7 +8,6 @@ namespace ContactFormApp2.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        // Constructor üzerinden DbContext'in elle alınması
         public ContactFormController()
         {
             _context = new ApplicationDbContext();
@@ -19,7 +18,6 @@ namespace ContactFormApp2.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Formu veritabanına ekliyoruz
                 _context.ContactForms.Add(form);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
