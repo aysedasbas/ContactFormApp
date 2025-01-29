@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGEYA YAZILIM - İletişim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: rgba(30, 60, 114, 0.2); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.argeya.com/Content/img/logos/logo.svg') no-repeat center center;
+            background-size: contain;
+            opacity: 0.2; 
+            z-index: -1;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 35px;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+            font-size: 14px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #1e3c72;
+            box-shadow: 0 0 8px rgba(30, 60, 114, 0.2);
+            outline: none;
+        }
+
+        .form-group input[type="submit"] {
+            background: #1e3c72;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background: #162d54;
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2>İletişim Formu</h2>
+        <form>
+            <div class="form-group">
+                <label>Ad</label>
+                <input type="text" placeholder="Adınızı girin" required>
+            </div>
+
+            <div class="form-group">
+                <label>Soyad</label>
+                <input type="text" placeholder="Soyadınızı girin" required>
+            </div>
+
+            <div class="form-group">
+                <label>Telefon</label>
+                <input type="text" placeholder="Telefon numaranızı girin" required>
+            </div>
+
+            <div class="form-group">
+                <label>E-Mail</label>
+                <input type="email" placeholder="E-posta adresinizi girin" required>
+            </div>
+
+            <div class="form-group">
+                <label>Departman</label>
+                <select required>
+                    <option value="">Departman Seçin</option>
+                    <option value="1">Muhasebe</option>
+                    <option value="2">Teknik Destek</option>
+                    <option value="3">İnsan Kaynakları</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Gönder">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
